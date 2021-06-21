@@ -7,6 +7,10 @@ function calcularHora(){
     let sumarsesion=15;
     if(hora===""){
         textoElemento = document.createTextNode("Hora actual: "+ hoy.getHours()+":" +hoy.getMinutes() + "  Hora en 15 min: "+ (hoy.setMinutes(hoy.getMinutes() + sumarsesion) && hoy.getHours() +":" + hoy.getMinutes()));
+    }else{
+        hoy.setHours(hora.substring(0,2));
+        hoy.setMinutes(hora.substring(3,6));
+        textoElemento = document.createTextNode("Hora actual: "+ hoy.getHours()+":" +hoy.getMinutes() + "  Hora en 15 min: "+ (hoy.setMinutes(hoy.getMinutes() + sumarsesion) && hoy.getHours() +":" + hoy.getMinutes()));
     }
 
     nuevoElemento.appendChild(textoElemento);
